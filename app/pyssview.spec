@@ -5,11 +5,11 @@ block_cipher = None
 
 
 a = Analysis(['pyssview.py'],
-             pathex=['/dados/GoogleDrive/rotinas_python/github_projects/pyssview'],
+             pathex=['/dados/GoogleDrive/rotinas_python/github_projects/PyssView/app'],
              binaries=[],
-             datas=[('/dados/GoogleDrive/rotinas_python/github_projects/pyssview/saves/sav.pkl', 'saves'), 
-                    ('/dados/GoogleDrive/rotinas_python/github_projects/pyssview/states/state.dat', 'states'),
-                    ('/dados/GoogleDrive/rotinas_python/github_projects/pyssview/icons/*', 'icons')],
+             datas=[('/dados/GoogleDrive/rotinas_python/github_projects/PyssView/app/saves/sav.pkl', 'saves'), 
+                    ('/dados/GoogleDrive/rotinas_python/github_projects/PyssView/app/states/state.dat', 'states'),
+                    ('/dados/GoogleDrive/rotinas_python/github_projects/PyssView/app/icons/*', 'icons')],
              hiddenimports=[],
              hookspath=[],
              hooksconfig={},

@@ -18,6 +18,7 @@ class Pyssview(QMainWindow, QDialog):
         
         self.pview = Ui_PyssviewMainWindow()
         self.pview.setupUi(self)
+        self.setWindowIcon(QIcon('{}/icons/logo3.svg'.format(ABSOLUT_PATH)))
         #Pyssview.loadChkboxState(self)
         
         self.data = {} #store data
