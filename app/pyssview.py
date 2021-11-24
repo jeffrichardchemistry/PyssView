@@ -18,7 +18,7 @@ class Pyssview(QMainWindow, QDialog):
         
         self.pview = Ui_PyssviewMainWindow()
         self.pview.setupUi(self)
-        self.setWindowIcon(QIcon('{}/icons/logo3.svg'.format(ABSOLUT_PATH)))
+        self.setWindowIcon(QIcon(r'{}/icons/logo3.svg'.format(ABSOLUT_PATH)))
         #Pyssview.loadChkboxState(self)
         
         self.data = {} #store data
@@ -55,7 +55,7 @@ class Pyssview(QMainWindow, QDialog):
         """
         Pyssview.saveChkboxState(self)
         #save file
-        with open('{}/saves/sav.pkl'.format(ABSOLUT_PATH), 'wb') as filesave:
+        with open(r'{}/saves/sav.pkl'.format(ABSOLUT_PATH), 'wb') as filesave:
             pickle.dump(self.data, filesave, protocol=pickle.HIGHEST_PROTOCOL)
         self.close()
 
@@ -63,13 +63,13 @@ class Pyssview(QMainWindow, QDialog):
         """
         This function load the file of status of the checkbox
         """
-        with open('{}/states/state.dat'.format(ABSOLUT_PATH), 'r') as file:
+        with open(r'{}/states/state.dat'.format(ABSOLUT_PATH), 'r') as file:
             get = file.read()
             
         if get == '2':
             self.pview.chk_remember.setChecked(True)            
             
-            with open('{}/saves/sav.pkl'.format(ABSOLUT_PATH), 'rb') as fp:
+            with open(r'{}/saves/sav.pkl'.format(ABSOLUT_PATH), 'rb') as fp:
                 data = pickle.load(fp)            
             self.data = data
             
@@ -88,11 +88,11 @@ class Pyssview(QMainWindow, QDialog):
         get = self.pview.chk_remember.checkState()
         #checkOn
         if int(get) == 2:
-            with open('{}/states/state.dat'.format(ABSOLUT_PATH), 'w') as fstate:
+            with open(r'{}/states/state.dat'.format(ABSOLUT_PATH), 'w') as fstate:
                 fstate.write('2')
         #CheckOff
         else:
-            with open('{}/states/state.dat'.format(ABSOLUT_PATH), 'w') as fstate:
+            with open(r'{}/states/state.dat'.format(ABSOLUT_PATH), 'w') as fstate:
                 fstate.write('0')
     
     def saveProfile(self):
@@ -220,7 +220,7 @@ class Pyssview(QMainWindow, QDialog):
         log.setStyleSheet("background-color: rgba(84, 84, 84, 0.0); color:rgb(238,238,236); font-size:16px")
         
         #Create a Qbutton/Line modify
-        passw = ButtonLineEdit('{}/icons/copy_clip.png'.format(ABSOLUT_PATH), objName=objName,tooltip_textLine=desc, tooltip_textBtn='Copy to Clipboard')
+        passw = ButtonLineEdit(r'{}/icons/copy_clip.png'.format(ABSOLUT_PATH), objName=objName,tooltip_textLine=desc, tooltip_textBtn='Copy to Clipboard')
         passw.setStyleSheet("background-color: rgba(84, 84, 84, 0.4); color:rgb(238, 238, 236)")
         passw.setText(password)
         passw.buttonClicked.connect(lambda x:self.__copy2clipboard(password))
@@ -274,7 +274,7 @@ class Addpassdialog(QDialog):
 
         self.labelpassword = QLabel('Password:')
         self.labelpassword.setStyleSheet("background-color: rgba(84, 84, 84, 0.0); color:rgb(238,238,236)")
-        self.linepassword = ButtonLineEdit('{}/icons/eye.png'.format(ABSOLUT_PATH), tooltip_textBtn='Hide/Show password')
+        self.linepassword = ButtonLineEdit(r'{}/icons/eye.png'.format(ABSOLUT_PATH), tooltip_textBtn='Hide/Show password')
         self.linepassword.setPlaceholderText('Account Password.')
         self.linepassword.setStyleSheet("background-color: rgba(84, 84, 84, 0.4); color:rgb(238, 238, 236)")
         self.linepassword.buttonClicked.connect(self.passwordform)
