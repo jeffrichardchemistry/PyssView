@@ -19,7 +19,7 @@ class Install:
         #Make Desktop shortcut and Icon
         Install.makeDesktopFile(self,
                                 exec_path='{}/pyssview/pyssview'.format(dir2install),
-                                icon_path='{}/pyssview/icons/logo3.svg'.format(dir2install))
+                                icon_path='{}/pyssview/_internal/icons/logo3.svg'.format(dir2install))
         
     def makeDesktopFile(self, exec_path, icon_path):
         desktop = """
